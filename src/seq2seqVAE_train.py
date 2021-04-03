@@ -56,6 +56,7 @@ def main(args, hparams):
 
     # Add support for dot access for auxiliary function use:
     hparams_dot = DotDict(hparams)
+    hparams_dot.epochs = args.epochs
 
     # Load dataset:
     hparams_dot.data_set = args.data_set
@@ -126,6 +127,10 @@ if __name__ == '__main__':
     parser.add_argument('--initial_epoch', type=int,
                         default=0,
                         help='Epoch to start from when loading from checkpoint. (default: %(default)s)')
+
+    parser.add_argument('--epochs', type=int,
+                        default=20,
+                        help='No. of epochs')
 
     args = parser.parse_args()
 

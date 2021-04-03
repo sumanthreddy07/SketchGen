@@ -23,8 +23,8 @@ def get_default_hparams():
     params_dict = {
         # Experiment Params:
         'is_training': True,  # train mode (relevant only for accelerated LSTM mode)
-        'data_set': 'catfull',  # datasets to train on
-        'epochs': 1,  # how many times to go over the full train set (on average, since batches are drawn randomly)
+        'data_set': 'cat',  # datasets to train on
+        'epochs': 25,  # how many times to go over the full train set (on average, since batches are drawn randomly)
         'save_every': None, # Batches between checkpoints creation and validation set evaluation. Once an epoch if None.
         'batch_size': 100,  # Minibatch size. Recommend leaving at 100.
         # Loss Params:
@@ -84,7 +84,6 @@ class Seq2seqModel(object):
         # Set recurrent dropout to fraction of units to *drop*:
         recurrent_dropout = 1.0-self.hps['recurrent_dropout_prob'] if (self.hps['use_recurrent_dropout']) else 0
         
-        # Note that in inference LSTM is always selected (even in accelerated mode) so inference on CPU is supported
         lstm_layer_encoder = LSTM(units=self.hps['enc_rnn_size'], recurrent_dropout=recurrent_dropout)
         lstm_layer_decoder = LSTM(units=self.hps['dec_rnn_size'], recurrent_dropout=recurrent_dropout,return_sequences=True, return_state=True)
         
