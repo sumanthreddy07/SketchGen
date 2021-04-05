@@ -12,9 +12,8 @@ from six.moves import cStringIO as StringIO
 import copy
 import os
 import sys
-
-from keras import backend as K
-from keras.callbacks import Callback,LearningRateScheduler, TensorBoard
+from tensorflow.compat.v1.keras import backend as K
+from tensorflow.keras.callbacks import Callback, LearningRateScheduler, TensorBoard
 
 
 def batch_generator(dataset, train):

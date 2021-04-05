@@ -10,9 +10,10 @@ import os
 import sys
 
 from seq2seqVAE import Seq2seqModel, get_default_hparams
-from keras.callbacks import ModelCheckpoint
+from tensorflow.keras.callbacks import ModelCheckpoint
 from utils import load_dataset,batch_generator, KLWeightScheduler, LearningRateSchedulerPerBatch,\
     TensorBoardLR, DotDict, Logger
+
 
 def get_callbacks_dict(seq2seq, model_params, experiment_path=''):
     """ create a dictionary of all used callbacks """

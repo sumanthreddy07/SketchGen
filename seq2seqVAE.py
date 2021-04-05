@@ -2,16 +2,21 @@
 import numpy as np
 import random
 
-from keras.models import Model
-from keras.layers import Input
-from keras.layers import Concatenate
-from keras.layers import RepeatVector
-from keras.layers import Dense, LSTM, Bidirectional, Lambda
-from keras.activations import softmax, exponential, tanh
-from keras import backend as K
-from keras.initializers import RandomNormal
-from keras.losses import categorical_crossentropy
-from keras.optimizers import Adam, SGD
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input
+from tensorflow.keras.layers import Concatenate
+from tensorflow.keras.layers import RepeatVector
+from tensorflow.keras.layers import Dense, LSTM, Bidirectional, Lambda
+from tensorflow.keras.activations import softmax, exponential, tanh
+from tensorflow.compat.v1.keras import backend as K
+from tensorflow.keras.initializers import RandomNormal
+from tensorflow.keras.losses import categorical_crossentropy
+from tensorflow.keras.optimizers import Adam, SGD
+
+import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
+tf.compat.v1.experimental.output_all_intermediates(True)
+
 
 def get_default_hparams():
     """ Return default hyper-parameters """
