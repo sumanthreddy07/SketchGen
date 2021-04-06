@@ -8,7 +8,7 @@ Can a machine draw sketches like humans do? The paper [***A Neural Representatio
 </div>
 <br>
 While there is a already a large body of existing work on generative modelling of images using neural networks, most of the work focuses on modelling raster images represented as a 2D grid of pixels. But this project presents a lower-dimensional vector-based representation inspired by how people draw.
-
+<br>
 The implementation is ported from the official Tensorflow implementation that was released under project Magenta by the authors.
 
 ## Overview
@@ -24,22 +24,23 @@ The goal of a seq2seq autoencoder is to train a network to encode an input seque
 - Ubuntu
 - Google Colab
 
-## Usage
-### Training
+## Datasets
+To train the model, the dataset required are available in the [Google Cloud Platform](https://console.cloud.google.com/storage/browser/quickdraw_dataset/sketchrnn). The dataset collected is from a game called quickdraw. The format of data is stroke 3 format which consists of x and y coordinates and a ‘0’ or ‘1’ denoting pen down and pen up.
 
-To train the model, the dataset required are available in the [Google Cloud Platform](https://console.cloud.google.com/storage/browser/quickdraw_dataset/sketchrnn) 
+## Training
+The model can be trained directly from the [SketchGen.ipynb](SketchGen.ipynb) or can be locally run in the terminal using the below command
 
 ```bash
-python3 seq2seqVAE_train.py
+$ python3 seq2seqVAE_train.py <optional arguments>
 ```
 
-#### Important Optional Arguments (and their default file names)
+### Important Optional Arguments (and their default file names)
 ```bash
 --data_dir          =   datasets
 --experiment_dir    =   experiments
 --epochs            =   20
 ```
-**NOTE: There are many more hyperparameters available in the [seq2seqVAE.py](seq2seqVAE.py) which can be modified.**
+> **NOTE: There are many more hyperparameters available in the file [seq2seqVAE.py](seq2seqVAE.py) which can be modified.**
 
 ### Using a pre-trained model
 You can use the SketchGen.ipynb by providing the appropriate paths to all files and explore the sketchs in depth. There are examples of encoding and decoding of sketches, interpolating in latent space, sampling under different temperature values etc.
