@@ -6,13 +6,15 @@ Can a machine draw sketches like humans do? The paper [***A Neural Representatio
 <img align="center" width="200" height="200" src="animations/animation_ladder0.gif"> 
 <img align="center" width="200" height="200" src="animations/animation_cat0.gif">
 </div>
-
+<br>
 While there is a already a large body of existing work on generative modelling of images using neural networks, most of the work focuses on modelling raster images represented as a 2D grid of pixels. But this project presents a lower-dimensional vector-based representation inspired by how people draw.
 
 The implementation is ported from the official Tensorflow implementation that was released under project Magenta by the authors.
 
 ## Overview
 This project is based a Sequence to Sequence Variational Autoencoder (Seq2SeqVAE) in which we encode strokes (of a sketch) into a latent vector space, using a bidirectional LSTM as the encoder. The latent representation can then be decoded back into a series of strokes.
+
+![](https://1.bp.blogspot.com/-iuML0km0cv0/WO6U0ukCaYI/AAAAAAAABt0/wsBg174LgtQslJgG2Q6jKeOTFP1EH3o3ACLcB/s1600/sketch_rnn.png)
 
 The goal of a seq2seq autoencoder is to train a network to encode an input sequence into a vector of floating point numbers, called a latent vector, and from this latent vector reconstruct an output sequence using a decoder that replicates the input sequence as closely as possible. Since encoding is performed stochastically, and so is the sampling mechanism of the decoder, the reconstructed sketches are always different.
 
@@ -42,7 +44,8 @@ python3 seq2seqVAE_train.py
 ### Using a pre-trained model
 You can use the SketchGen.ipynb by providing the appropriate paths to all files and explore the sketchs in depth. There are examples of encoding and decoding of sketches, interpolating in latent space, sampling under different temperature values etc.
 
-The Repo contains 4 pre trained models
+The Repo contains 4 pre trained models on Encoder_Size=256, Decoder_Size=512 latent_vector_space=128
+
 - Cat (20 Epochs)
 - Ladder (20 Epochs)
 - Sun (20 Epochs)
