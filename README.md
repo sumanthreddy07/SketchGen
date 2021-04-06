@@ -34,7 +34,7 @@ The model can be trained directly from the [SketchGen.ipynb](SketchGen.ipynb) or
 $ python3 seq2seqVAE_train.py <optional arguments>
 ```
 
-### Important Optional Arguments (and their default file names)
+### Important Optional Arguments (and their default values)
 ```bash
 --data_dir          =   datasets
 --experiment_dir    =   experiments
