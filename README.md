@@ -2,14 +2,14 @@
 
 Can a machine draw sketches like humans do? The paper [***A Neural Representation of Sketch Drawings***](https://arxiv.org/abs/1704.03477) presents a generative RNN which is capable of producing sketches of common objects, with the goal of training a machine to draw and generalize abstract concepts in a manner similar to humans. This repository presents examples of a simple sketchs (ex: ladder) to harder sketches (ex: cat).
 
+<div align="center">
+<img align="center" width="200" height="200" src="animations/animation_ladder0.gif"> 
+<img align="center" width="200" height="200" src="animations/animation_cat0.gif">
+</div>
+
 While there is a already a large body of existing work on generative modelling of images using neural networks, most of the work focuses on modelling raster images represented as a 2D grid of pixels. But this project presents a lower-dimensional vector-based representation inspired by how people draw.
 
 The implementation is ported from the official Tensorflow implementation that was released under project Magenta by the authors.
-
-<div align="center">
-<img align="center" style="float: center;" width="200" height="200" src="animations/animation_ladder0.gif"> 
-<img align="center" style="float: center;" width="200" height="200" src="animations/animation_cat0.gif">
-</div>
 
 ## Overview
 This project is based a Sequence to Sequence Variational Autoencoder (Seq2SeqVAE) in which we encode strokes (of a sketch) into a latent vector space, using a bidirectional LSTM as the encoder. The latent representation can then be decoded back into a series of strokes.
