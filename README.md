@@ -8,8 +8,8 @@ Can a machine draw sketches like humans do? The paper [***A Neural Representatio
 </div>
 <br>
 While there is a already a large body of existing work on generative modelling of images using neural networks, most of the work focuses on modelling raster images represented as a 2D grid of pixels. But this project presents a lower-dimensional vector-based representation inspired by how people draw.
-<br>
-The implementation is ported from the official Tensorflow implementation that was released under project Magenta by the authors.
+
+> The implementation is ported from the official Tensorflow implementation that was released under project Magenta by the authors.
 
 ## Overview
 This project is based a Sequence to Sequence Variational Autoencoder (Seq2SeqVAE) in which we encode strokes (of a sketch) into a latent vector space, using a bidirectional LSTM as the encoder. The latent representation can then be decoded back into a series of strokes.
