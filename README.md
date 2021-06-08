@@ -55,6 +55,8 @@ The Repo contains 4 pre trained models on Encoder_Size=256, Decoder_Size=512 lat
 - Sun (20 Epochs)
 - Leaf (20 Epochs)
 
+> **NOTE [June, 2021]: Datasets and Pre-trained models have been removed.**
+
 ## References
 >1. David Ha and Douglas Eck, [***A Neural Representation of Sketch Drawings***](https://arxiv.org/abs/1704.03477), 2017
 >2. David Ha, [***Teaching Machines to Draw***](https://ai.googleblog.com/2017/04/teaching-machines-to-draw.html), 2011
